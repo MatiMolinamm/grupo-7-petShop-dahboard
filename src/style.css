@@ -1,0 +1,23 @@
+.editHeader {
+  padding: 15px;
+  margin-right: 75%;
+}
+
+.editMain {
+  background-color: black;
+  border: solid white 5px;
+  color: blanchedalmond;
+  height: 100%;
+  padding: 15px;
+}
+
+.editButton {
+  background-color: white;
+  margin-left: 25px;
+}
+
+.editForm {
+  padding: 25px;
+  background-color: gainsboro;
+  font: caption;
+}
