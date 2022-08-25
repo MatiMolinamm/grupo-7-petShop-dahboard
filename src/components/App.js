@@ -1,22 +1,36 @@
+//APP
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./Header";
-import Main from "./Main";
-import Listado from "./Listado";
-import Formulario from "./Formulario";
-import "../style.css";
-
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import ContentRow from "./ContentRow";
+import ContentUsers from "./ContentUsers";
+import ContentProducts from "./ContentProducts";
+import DetailUser from "./DetailUser";
+import DetailProduct from "./DetailProduct";
+import PerrosList from "./PerrosList";
+import GatosList from "./GatosList";
+import AvesList from "./AvesList";
+import PecesList from "./PecesList";
+import NotFound from "./NotFound";
 function App() {
   return (
     <BrowserRouter>
-      <div className="conteiner">
-        <Header />
-        <Routes>
-          <Route path="/" exact element={<Main />} />
-          <Route path="/list" exact element={<Listado />} />
-          <Route path="/form" exact element={<Formulario />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<ContentRow />} />
+        <Route path="/users" exact element={<ContentUsers />} />
+        <Route path="/detail/:idUser" exact element={<DetailUser />} />
+
+        <Route path="/products" exact element={<ContentProducts />} />
+        <Route
+          path="/detailProduct/:idProduct"
+          exact
+          element={<DetailProduct />}
+        />
+        <Route path="/perros" exact element={<PerrosList />} />
+        <Route path="/gatos" exact element={<GatosList />} />
+        <Route path="/aves" exact element={<AvesList />} />
+        <Route path="/peces" exact element={<PecesList />} />
+        <Route path="*" exact element={<NotFound />} />
+      </Routes>
     </BrowserRouter>
   );
 }
